@@ -15,6 +15,7 @@ class About extends Component{
                 <h1>This is my about page</h1>
                 <Contact username={this.props.user.name} />
                 <Main changeUserName={() => this.props.setName("This is success")} />
+                    {/*<Main />*/}
                 <User username={this.props.user.name} />
             </div>
         );
