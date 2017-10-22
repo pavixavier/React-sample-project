@@ -11,7 +11,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import App from './App';
-import About from './Components/About'
 
 import { Provider } from 'react-redux';
 
@@ -41,7 +40,7 @@ const userReducer =(state = profile, action) => {
     }
     return state;
 }
-const reducer = (state = initialState, action ) => {
+const mathReducer = (state = initialState, action ) => {
     switch (action.type){
         case "ADD":
             //state.result += action.payload;
@@ -65,7 +64,7 @@ const myLogger = (store) => (next) => (action) => {
 }
 //const store = createStore( reducer);
 const store = createStore(
-                            combineReducers({reducer, userReducer})
+                            combineReducers({math: mathReducer, user: userReducer})
                             , {}
                             , applyMiddleware(myLogger)
                         );
@@ -86,8 +85,7 @@ store.subscribe(() => {
 // })
 
  ReactDOM.render(
-     <Provider strore={store} >
+     <Provider store={store} >
         <App />
-        <About />
      </Provider> , document.getElementById('root')
  );

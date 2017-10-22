@@ -28,3 +28,39 @@ class App extends Component {
 }
 
 export default App;
+
+/*import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
+class App extends Component{
+  constructor(){
+    super();
+  }
+  
+    render(){
+        return(
+            <div>
+                <h1>This is my about page</h1>
+                {this.props.user.name}
+            </div>
+        );
+    }
+}
+
+const mapStateToProps = (state) => {
+    return{
+        user: state.user
+    }
+}
+
+const mapDispatchToProps = (dispatch) =>{
+    return{
+        setName: (name) => {
+            dispatch({
+                type: "SET_NAME",
+                payload: name
+            });
+        }
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(App);*/
