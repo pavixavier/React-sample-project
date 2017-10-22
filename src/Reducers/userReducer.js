@@ -6,14 +6,12 @@ const profile={
 const userReducer =(state = profile, action) => {
 
     switch(action.type){
-        case "SET_NAME":
+        case "SET_NAME_FULFILLED":
             state={
                 ...state,
                 name: action.payload
             }
             break;
-        // case "SET_NUMBER":
-        //     break;
         default:
             break;
     }

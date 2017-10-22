@@ -32,7 +32,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) =>{
     return{
         setName: (name) => {
-            dispatch({setName:name});
+            dispatch(setName(name));
         }
     }
 }

@@ -8,9 +8,11 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import math from '../Reducers/mathReducer';
 import user from '../Reducers/userReducer';
+import thunk from 'redux-thunk';
+import promise from 'redux-promise-middleware';
 
 export default createStore(
                             combineReducers({ math, user })
                             , {}
-                            , applyMiddleware()
+                            , applyMiddleware(thunk, promise())
                         );
