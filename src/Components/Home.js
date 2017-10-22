@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import About from '../Container/About';
+import About from '../Containers/About';
 
 class Home extends Component{
     // constructor(){

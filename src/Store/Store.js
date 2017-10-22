@@ -1,18 +1,16 @@
-import { createStore } from 'redux';
+//const store = createStore( reducer);
+// const store = createStore(
+//                             combineReducers({math: mathReducer, user: userReducer})
+//                             , {}
+//                             , applyMiddleware(myLogger)
+//                         );
 
-const reducer = (state, action ) => {
-    switch (action.type){
-        case "ADD":
-            state = state + action.payload;
-            break;
-        case "SUBTRACT":
-            break;
-    }
-    return state;
-}
-const store = createStore( reducer, 1);
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import math from '../Reducers/mathReducer';
+import user from '../Reducers/userReducer';
 
-store.dispatch({
-    type: "ADD",
-    payload: 10
-})
+export default createStore(
+                            combineReducers({ math, user })
+                            , {}
+                            , applyMiddleware()
+                        );
